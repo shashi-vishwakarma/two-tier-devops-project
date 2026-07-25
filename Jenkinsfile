@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     stages {
+
         stage('Checkout') {
             steps {
                 checkout scm
@@ -10,7 +11,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo 'Building the application...'
+                sh 'docker build -t flask-app:v1 .'
             }
         }
 
@@ -22,7 +23,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                echo 'Deploying the application...'
+                echo 'Deploying application...'
             }
         }
     }
