@@ -2,29 +2,10 @@ pipeline {
     agent any
 
     stages {
-
-        stage('Checkout') {
+        stage('Checkout Code') {
             steps {
-                checkout scm
-            }
-        }
-
-        stage('Build') {
-            steps {
-                sh 'docker build -t flask-app:v1 .'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                echo 'Running tests...'
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                sh 'docker compose down'
-                sh 'docker compose up -d'
+                git branch: 'main',
+                    url: 'git@github.com:shashi-vishwakarma/two-tier-devops-project.git'
             }
         }
     }
