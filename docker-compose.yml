@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: employee_db
+      MYSQL_USER: employee
+      MYSQL_PASSWORD: employee123
+
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+    networks:
+      - employee-network
+  app:
+    build: .
+    container_name: employee-app
+
+    ports:
+      - "5000:5000"
+
+    depends_on:
+      - mysql
+
+    networks:
+      - employee-network
+
+
+
+volumes:
+  mysql-data:
+
+networks:
+  employee-network:
