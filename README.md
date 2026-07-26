@@ -277,6 +277,45 @@ Configured Jenkins to create uniquely tagged Docker images using the build numbe
 - Prometheus
 
 ---
+---
+
+# 📸 Project Screenshots
+
+## Jenkins Dashboard
+
+![Jenkins Dashboard](screenshots/jenkins-dashboard.png)
+
+---
+
+## CI/CD Pipeline Execution
+
+![CI/CD Pipeline](screenshots/pipeline-success.png)
+
+---
+
+## Running Application
+
+![Running Application](screenshots/application-home.png)
+
+---
+
+## GitHub Webhook
+
+![GitHub Webhook](screenshots/github-webhook.png)
+
+---
+
+## Docker Containers
+
+![Docker Containers](screenshots/docker-containers.png)
+
+---
+
+## Docker Images
+
+![Docker Images](screenshots/docker-images.png)
+
+---
 
 ## Author
 
