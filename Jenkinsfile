@@ -27,5 +27,14 @@ pipeline {
                 sh 'docker compose up -d'
             }
         }
+        stage('Health Check') {
+            steps {
+                sh '''
+                sleep 10
+                curl -f http://localhost:5000/health
+                '''
+            }
+        }
+
     }
 }
