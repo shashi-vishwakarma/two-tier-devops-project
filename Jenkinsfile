@@ -11,7 +11,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'docker build -t flask-app:v1 .'
+                sh 'docker build -t flask-app:${BUILD_NUMBER} .'
             }
         }
 
@@ -24,7 +24,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh 'docker compose down'
-                sh 'docker compose up -d'
+                sh 'BUILD_NUMBER=${BUILD_NUMBER} docker compose up -d'
             }
         }
         stage('Health Check') {

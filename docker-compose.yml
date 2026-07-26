@@ -17,7 +17,7 @@ services:
     networks:
       - employee-network
   app:
-    build: .
+    image: flask-app:${BUILD_NUMBER}
     container_name: employee-app
 
     ports:
